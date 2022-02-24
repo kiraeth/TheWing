@@ -1,0 +1,1135 @@
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x1988 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042306D in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D13F in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (44):
+
+     42:           // См. важный комментарий в примере к функции txLoadImage!
+     43: 
+=>   44:           txBitBlt (txDC(), 0, 0, 800, 600, background_CopiedFromHelp, 0, 0);
+     45: 
+     46: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (44):
+
+     42:           // См. важный комментарий в примере к функции txLoadImage!
+     43: 
+=>   44:           txBitBlt (txDC(), 0, 0, 800, 600, background_CopiedFromHelp, 0, 0);
+     45: 
+     46: 
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 14 2021 18:04:29, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 14 2021 18:04:43
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x22EC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042306D in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D105 in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (39):
+
+     37:           // Посмотрите, как сделано в примере TX\Examples\Tennis\Tennis.cpp.
+     38: 
+=>   39:           txBitBlt (txDC(), 0, 0, 800, 600, background_CopiedFromHelp, 0, 0);
+     40: 
+     41:     while(true)
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (39):
+
+     37:           // Посмотрите, как сделано в примере TX\Examples\Tennis\Tennis.cpp.
+     38: 
+=>   39:           txBitBlt (txDC(), 0, 0, 800, 600, background_CopiedFromHelp, 0, 0);
+     40: 
+     41:     while(true)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 14 2021 18:05:54, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 14 2021 18:06:07
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x311C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042306D in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D105 in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (39):
+
+     37:           // Посмотрите, как сделано в примере TX\Examples\Tennis\Tennis.cpp.
+     38: 
+=>   39:           txBitBlt (txDC(), 0, 0, 800, 600, background_CopiedFromHelp, 0, 0);
+     40: 
+     41:     while(true)
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (39):
+
+     37:           // Посмотрите, как сделано в примере TX\Examples\Tennis\Tennis.cpp.
+     38: 
+=>   39:           txBitBlt (txDC(), 0, 0, 800, 600, background_CopiedFromHelp, 0, 0);
+     40: 
+     41:     while(true)
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 14 2021 18:06:20, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 14 2021 18:06:33
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x838 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042306D in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D100 in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 14 2021 18:14:40, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 14 2021 18:14:52
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x3878 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042306D in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D100 in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 14 2021 18:16:22, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 14 2021 18:16:34
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x1F1C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042306D in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D100 in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 14 2021 18:16:48, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 14 2021 18:16:59
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x1F1C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0042306D in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D100 in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (38):
+
+     36:     createBall(x,y);
+     37: 
+=>   38:     txBitBlt (txDC(), 0, 0, 50, 56, mainhero);
+     39: 
+     40:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 14 2021 18:16:48, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 14 2021 18:16:59
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x1144 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:14
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x1144 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:02, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:15
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x37D0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:43
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x37D0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:43
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#3: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x37D0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:43
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#4: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x37D0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:43
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#5: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x37D0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:43
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#6: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x37D0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:20:31, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:20:42
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x1958 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 132, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:21:20, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:21:32
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x23E4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 129, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 129, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:44:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:44:18
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#2: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x23E4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 129, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 129, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:44:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:44:18
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: E:\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13658, функция: bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#3: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x005062FC (32-bit), Flags: CMdRe0, Thread: 0x23E4 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00423045 in E:\Программирование\Game\Game\main.exe: txBitBlt() at g:/программы/codeblocks/mingw/include/txlib.h (13658)
+
+# 1 0x0042D1BA in E:\Программирование\Game\Game\main.exe: main() at E:/Программирование/Game/Game/main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 129, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in bool {anonymous}::TX::txBitBlt(HDC, double, double, double, double, HDC, double, double, unsigned int) at g:\программы\codeblocks\mingw\include\txlib.h (13658):
+
+  13656:     {
+  13657: $1  if (_TX_HDC_FAILED (destImage))   return false;
+=>13658: $   if (_TX_HDC_FAILED (sourceImage)) return false;
+  13659: 
+  13660: $   POINT size = txGetExtent (sourceImage);
+
+# 1 in int main() at E:\Программирование\Game\Game\main.cpp (40):
+
+     38: 
+     39:     txBitBlt (txDC(), 0, 0, 1600, 900, background);
+=>   40:     txBitBlt (txDC(), x, y, 200, 129, mainhero);
+     41: 
+     42:     if(txGetAsyncKeyState('W'))
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Dec 28 2021 18:44:04, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Dec 28 2021 18:44:18
+
+Run file:	E:\Программирование\Game\Game\main.exe
+Directory:	E:\Программирование\Game\Game
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib сообщает:
+
+Программа: C:\Users\Admin\Documents\Программирование\Game\Game\main.exe, файл: g:\программы\codeblocks\mingw\include\txlib.h, строка: 13687, функция: bool {anonymous}::TX::txTransparentBlt(HDC, double, double, double, double, HDC, double, double, COLORREF),
+
+Сообщение: Параметр "sourceImage" неверен. Возможно, этот холст не создан, или уже уничтожен, или не загрузилась картинка.
+
+#1: TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400], Instance: 0x004F42FC (32-bit), Flags: CMdRE0, Thread: 0x17AC (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x004173D3 in C:\Users\Admin\Documents\Программирование\Game\Game\main.exe: (anonymous namespace)::TX::txTransparentBlt()
+# 1 0x0041D531 in C:\Users\Admin\Documents\Программирование\Game\Game\main.exe: DrawCharacter()
+# 2 0x0041D7A1 in C:\Users\Admin\Documents\Программирование\Game\Game\main.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 171, Date: 2021-09-14 18:45:19 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	g:\программы\codeblocks\mingw\include\txlib.h
+Compiled:	Feb  8 2022 18:07:30, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, Debug
+Started:	Feb 08 2022 18:07:36
+
+Run file:	C:\Users\Admin\Documents\Программирование\Game\Game\main.exe
+Directory:	C:\Users\Admin\Documents\Программирование\Game\Game
+
+--------------------------------------------------
