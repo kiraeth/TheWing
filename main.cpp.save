@@ -35,7 +35,7 @@ int main()
     int snipersingle=1;
     int shotgunsingle=6;
     int pistolsingle=1;
-    int xenemy=1300;
+    int xenemy=1700;
     int yenemy=500;
     int venemy=20;
     int xbullet;
@@ -62,23 +62,25 @@ int main()
 
     if(singlefire)
     {
-        txSetColor(TX_BLACK,3);
-        txSetFillColor(TX_WHITE);
+    
+        txSe
         txCircle(bullet[0].x, bullet[0].y, 5);
         bullet[0].x=bullet[0].x+(bullet[0].v+100);
         txSetColor(RGB (166,83,153), 3);
         txTextOut(protagonist.x+30, protagonist.y-50, singlefireoninfo);
+        txSetColor(TX_WHITE);
+        txTextOut(protagonist.x+30, protagonist.y-50, singlefireoninfo);
     }
     else
     {
-       for(int i=0; i<riflemagazine; i++)
+       for(int i=0; i<rifleburst; i++)
        {
            if(bullet[i].visible)
            {
               txSetColor(TX_BLACK,3);
               txSetFillColor(TX_WHITE);
-              txCircle(bullet[riflemagazine-1].x, bullet[riflemagazine-1].y, 5);
-              bullet[riflemagazine-1].x=bullet[riflemagazine-1].x+bullet[riflemagazine-1].v+28;
+              txCircle(bullet[rifleburst-1].x, bullet[rifleburst-1].y, 5);
+              bullet[rifleburst-1].x=bullet[rifleburst-1].x+bullet[rifleburst-1].v+28;
               txSetColor(RGB (166,83,153), 3);
               txTextOut(protagonist.x+30, protagonist.y-50, singlefireoffinfo);
            }
@@ -87,7 +89,7 @@ int main()
 
     if(GetAsyncKeyState(VK_RETURN))
     {
-         for(int i=0; i<riflemagazine; i++)
+         for(int i=0; i<rifleburst; i++)
          {
              bullet[i] = {protagonist.x+305, protagonist.y+99, 0, true, 10};
          }
@@ -111,10 +113,10 @@ int main()
     bullet[0].visible=false;
     enemy.visible=false;
     }
-    else if(bullet[riflemagazine-1].x>enemy.x+50 && bullet[riflemagazine-1].x<enemy.x+200
-        && bullet[riflemagazine-1].y>enemy.y && bullet[riflemagazine-1].y<enemy.y+111)
+    else if(bullet[rifleburst-1].x>enemy.x+50 && bullet[rifleburst-1].x<enemy.x+200
+        && bullet[rifleburst-1].y>enemy.y && bullet[rifleburst-1].y<enemy.y+111)
     {
-    bullet[riflemagazine-1].visible=false;
+    bullet[rifleburst-1].visible=false;
     enemy.visible=false;
     }
 

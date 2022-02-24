@@ -62,12 +62,16 @@ int main()
 
     if(singlefire)
     {
-        txSetColor(TX_BLACK,3);
+
+        txSelectFont("Arial", 25);
+        txSetColor(TX_BLACK, 3);
         txSetFillColor(TX_WHITE);
         txCircle(bullet[0].x, bullet[0].y, 5);
         bullet[0].x=bullet[0].x+(bullet[0].v+100);
-        txSetColor(RGB (166,83,153), 3);
-        txTextOut(protagonist.x+30, protagonist.y-50, singlefireoninfo);
+        txTextOut(protagonist.x+28, protagonist.y-29, singlefireoninfo);
+        txSelectFont("Arial", 23);
+        txSetColor(TX_WHITE);
+        txTextOut(protagonist.x+30, protagonist.y-30, singlefireoninfo);
     }
     else
     {
@@ -75,12 +79,15 @@ int main()
        {
            if(bullet[i].visible)
            {
-              txSetColor(TX_BLACK,3);
+              txSelectFont("Arial", 25);
+              txSetColor(TX_BLACK, 3);
               txSetFillColor(TX_WHITE);
               txCircle(bullet[rifleburst-1].x, bullet[rifleburst-1].y, 5);
               bullet[rifleburst-1].x=bullet[rifleburst-1].x+bullet[rifleburst-1].v+28;
-              txSetColor(RGB (166,83,153), 3);
-              txTextOut(protagonist.x+30, protagonist.y-50, singlefireoffinfo);
+              txTextOut(protagonist.x+28, protagonist.y-29, singlefireoninfo);
+              txSelectFont("Arial", 23);
+              txSetColor(TX_WHITE);
+              txTextOut(protagonist.x+30, protagonist.y-30, singlefireoffinfo);
            }
        }
     }
@@ -105,14 +112,14 @@ int main()
     protagonist.y=protagonist.y+35;
     }
 
-    if(bullet[0].x>enemy.x+50 && bullet[0].x<enemy.x+200
-        && bullet[0].y>enemy.y && bullet[0].y<enemy.y+111)
+    if(bullet[0].x>enemy.x+70 && bullet[0].x<enemy.x+260
+        && bullet[0].y>enemy.y && bullet[0].y<enemy.y+150)
     {
     bullet[0].visible=false;
     enemy.visible=false;
     }
-    else if(bullet[rifleburst-1].x>enemy.x+50 && bullet[rifleburst-1].x<enemy.x+200
-        && bullet[rifleburst-1].y>enemy.y && bullet[rifleburst-1].y<enemy.y+111)
+    else if(bullet[rifleburst-1].x>enemy.x+50 && bullet[rifleburst-1].x<enemy.x+260
+        && bullet[rifleburst-1].y>enemy.y && bullet[rifleburst-1].y<enemy.y+150)
     {
     bullet[rifleburst-1].visible=false;
     enemy.visible=false;
