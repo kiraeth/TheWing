@@ -53,6 +53,8 @@ int main()
     Character enemy = {xenemy, yenemy, txLoadImage ("enemy.bmp"), true, 100};
     HDC background = txLoadImage ("background.bmp");
 
+
+
     while(!GetAsyncKeyState(VK_ESCAPE))
     {
     txBegin();
@@ -60,14 +62,15 @@ int main()
 
     enemy.x = enemy.x-12;
 
+    for(int i=0; i<rifleburst; i++)
+    {
+        bullet[i] = {protagonist.x+305, protagonist.y+99, 0, false, 10};
+    }
+
     if(singlefire)
     {
-
         txSelectFont("Arial", 25);
         txSetColor(TX_BLACK, 3);
-        txSetFillColor(TX_WHITE);
-        txCircle(bullet[0].x, bullet[0].y, 5);
-        bullet[0].x=bullet[0].x+(bullet[0].v+100);
         txTextOut(protagonist.x+28, protagonist.y-29, singlefireoninfo);
         txSelectFont("Arial", 23);
         txSetColor(TX_WHITE);
@@ -75,19 +78,34 @@ int main()
     }
     else
     {
+        txSelectFont("Arial", 25);
+        txSetColor(TX_BLACK, 3);
+        txTextOut(protagonist.x+28, protagonist.y-29, singlefireoffinfo);
+        txSelectFont("Arial", 23);
+        txSetColor(TX_WHITE);
+        txTextOut(protagonist.x+30, protagonist.y-30, singlefireoffinfo);
+    }
+
+    if(singlefire)
+    {
+        if(bullet[0].visible)
+        {
+            txSetColor(TX_BLACK, 3);
+            txSetFillColor(TX_WHITE);
+            txCircle(bullet[0].x, bullet[0].y, 5);
+            bullet[0].x=bullet[0].x+(bullet[0].v+100);
+        }
+    }
+    else
+    {
        for(int i=0; i<rifleburst; i++)
        {
            if(bullet[i].visible)
            {
-              txSelectFont("Arial", 25);
               txSetColor(TX_BLACK, 3);
               txSetFillColor(TX_WHITE);
               txCircle(bullet[rifleburst-1].x, bullet[rifleburst-1].y, 5);
               bullet[rifleburst-1].x=bullet[rifleburst-1].x+bullet[rifleburst-1].v+28;
-              txTextOut(protagonist.x+28, protagonist.y-29, singlefireoninfo);
-              txSelectFont("Arial", 23);
-              txSetColor(TX_WHITE);
-              txTextOut(protagonist.x+30, protagonist.y-30, singlefireoffinfo);
            }
        }
     }
