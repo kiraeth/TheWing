@@ -38,22 +38,24 @@ int main()
     int xenemy=1700;
     int yenemy=500;
     int venemy=20;
+    int enemynumber=3;
     int xbullet;
     int ybullet;
-    bool singlefire=true;
     bool selectpistol=false;
     bool selectrifle=true;
     bool selectsniper=false;
     bool selectshotgun=false;
-    const char* singlefireoninfo = "Режим стрельбы: одиночными.";
-    const char* singlefireoffinfo = "Режим стрельбы: очередями.";
 
     Character bullet[100];
+    Character enemies[3];
     Character protagonist = {x, y, txLoadImage ("ct.bmp"), true, 0};
     Character enemy = {xenemy, yenemy, txLoadImage ("enemy.bmp"), true, 100};
     HDC background = txLoadImage ("background.bmp");
 
-
+    for(int i=0; i<rifleburst; i++)
+    {
+        bullet[i] = {protagonist.x+305, protagonist.y+99, 0, false, 10};
+    }
 
     while(!GetAsyncKeyState(VK_ESCAPE))
     {
@@ -61,62 +63,6 @@ int main()
     txBitBlt (txDC(), 0, 0, 1600, 900, background);
 
     enemy.x = enemy.x-12;
-
-    for(int i=0; i<rifleburst; i++)
-    {
-        bullet[i] = {protagonist.x+305, protagonist.y+99, 0, false, 10};
-    }
-
-    if(singlefire)
-    {
-        txSelectFont("Arial", 25);
-        txSetColor(TX_BLACK, 3);
-        txTextOut(protagonist.x+28, protagonist.y-29, singlefireoninfo);
-        txSelectFont("Arial", 23);
-        txSetColor(TX_WHITE);
-        txTextOut(protagonist.x+30, protagonist.y-30, singlefireoninfo);
-    }
-    else
-    {
-        txSelectFont("Arial", 25);
-        txSetColor(TX_BLACK, 3);
-        txTextOut(protagonist.x+28, protagonist.y-29, singlefireoffinfo);
-        txSelectFont("Arial", 23);
-        txSetColor(TX_WHITE);
-        txTextOut(protagonist.x+30, protagonist.y-30, singlefireoffinfo);
-    }
-
-    if(singlefire)
-    {
-        if(bullet[0].visible)
-        {
-            txSetColor(TX_BLACK, 3);
-            txSetFillColor(TX_WHITE);
-            txCircle(bullet[0].x, bullet[0].y, 5);
-            bullet[0].x=bullet[0].x+(bullet[0].v+100);
-        }
-    }
-    else
-    {
-       for(int i=0; i<rifleburst; i++)
-       {
-           if(bullet[i].visible)
-           {
-              txSetColor(TX_BLACK, 3);
-              txSetFillColor(TX_WHITE);
-              txCircle(bullet[rifleburst-1].x, bullet[rifleburst-1].y, 5);
-              bullet[rifleburst-1].x=bullet[rifleburst-1].x+bullet[rifleburst-1].v+28;
-           }
-       }
-    }
-
-    if(GetAsyncKeyState(VK_RETURN))
-    {
-         for(int i=0; i<rifleburst; i++)
-         {
-             bullet[i] = {protagonist.x+305, protagonist.y+99, 0, true, 10};
-         }
-    }
 
     DrawProtagonist(protagonist);
     DrawEnemy(enemy);
@@ -130,33 +76,50 @@ int main()
     protagonist.y=protagonist.y+35;
     }
 
-    if(bullet[0].x>enemy.x+70 && bullet[0].x<enemy.x+260
-        && bullet[0].y>enemy.y && bullet[0].y<enemy.y+150)
+
+    if(GetAsyncKeyState(VK_RETURN))
     {
-    bullet[0].visible=false;
-    enemy.visible=false;
+         for(int i=0; i<rifleburst; i++)
+         {
+             bullet[i] = {protagonist.x+305, protagonist.y+99, 0, true, 10};
+             bullet[i].visible = true;
+         }
     }
-    else if(bullet[rifleburst-1].x>enemy.x+50 && bullet[rifleburst-1].x<enemy.x+260
+
+    if(enemies[3].visible)
+        {
+          for(int i=0; i<enemynumber; i++)
+            {
+                DrawEnemy(enemy);
+            }
+        }
+
+    if(bullet[0].visible)
+        {
+            for(int i=0; i<rifleburst; i++)
+        {
+            if(bullet[i].visible)
+                {
+              txSetColor(TX_BLACK, 3);
+              txSetFillColor(TX_WHITE);
+              txCircle(bullet[rifleburst-1].x, bullet[rifleburst-1].y, 5);
+              bullet[rifleburst-1].x=bullet[rifleburst-1].x+bullet[rifleburst-1].v+28;
+                }
+            }
+        }
+
+    if(bullet[rifleburst-1].x>enemy.x+50 && bullet[rifleburst-1].x<enemy.x+260
         && bullet[rifleburst-1].y>enemy.y && bullet[rifleburst-1].y<enemy.y+150)
     {
-    bullet[rifleburst-1].visible=false;
-    enemy.visible=false;
+        bullet[rifleburst-1].visible=false;
+        enemy.visible=false;
     }
 
     if(!enemy.visible)
     {
        enemy.y = random(150, 700);
-       enemy.x = 1700;
+       enemy.x = random(1700, 1850);
        enemy.visible = true;
-    }
-
-    if(GetAsyncKeyState('B'))
-    {
-    singlefire=false;
-    }
-    if(GetAsyncKeyState('N'))
-    {
-    singlefire=true;
     }
 
     if(protagonist.x<=325)
