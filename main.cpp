@@ -9,11 +9,19 @@ struct Character
     int v;
 };
 
+struct Text
+{
+    int x;
+    int y;
+    const char* text;
+    bool visible;
+};
+
 void DrawProtagonist(Character protagonist)
 {
     if(protagonist.visible)
     {
-         Win32::TransparentBlt (txDC(), protagonist.x, protagonist.y, 300, 134, protagonist.pic, 0, 0, 579, 258, RGB (44, 128, 43));
+        Win32::TransparentBlt (txDC(), protagonist.x, protagonist.y, 300, 134, protagonist.pic, 0, 0, 579, 258, RGB (44, 128, 43));
     }
 }
 
@@ -21,7 +29,15 @@ void DrawEnemy(Character enemy)
 {
     if(enemy.visible)
     {
-         Win32::TransparentBlt (txDC(), enemy.x, enemy.y, 260, 150, enemy.pic, 0, 0, 422, 243, RGB (44, 128, 43));
+        Win32::TransparentBlt (txDC(), enemy.x, enemy.y, 260, 150, enemy.pic, 0, 0, 422, 243, RGB (44, 128, 43));
+    }
+}
+
+void DrawText(Text text)
+{
+    if(text.visible)
+    {
+        txTextOut(text.x, text.y, text.text);
     }
 }
 
@@ -47,9 +63,21 @@ int main()
     bool selectshotgun=false;
 
     Character bullet[100];
-    Character enemies[3];
+
     Character protagonist = {x, y, txLoadImage ("ct.bmp"), true, 0};
     Character enemy = {xenemy, yenemy, txLoadImage ("enemy.bmp"), true, 100};
+
+    Character enemies[enemynumber];
+    enemies[0] = {1700, 200, enemy.pic, true, 100};
+    enemies[1] = {1650, 450, enemy.pic, true, 100};
+    enemies[2] = {1750, 700, enemy.pic, true, 100};
+
+    txSelectFont("Impact", 30);
+    Text first = {25, 25, "Как играть:", true};
+    Text second = {25, 50, "Нажмите Enter, чтобы стрелять", true};
+    Text third = {25, 75, "Нажмите W или S, чтобы ходить вверх или вниз", true};
+    Text fourth = {25, 100, "Нажмите G, чтобы сменить локацию перестрелки", true};
+    Text fifth = {25, 125, "Нажмите Q, чтобы закрыть это окно", true};
     HDC background = txLoadImage ("background.bmp");
 
     for(int i=0; i<rifleburst; i++)
@@ -65,7 +93,22 @@ int main()
     enemy.x = enemy.x-12;
 
     DrawProtagonist(protagonist);
-    DrawEnemy(enemy);
+
+       if(enemies[enemynumber].visible)
+        {
+          for(int i=0; i<enemynumber; i++)
+            {
+                DrawEnemy(enemies[i]);
+                enemies[i].x = enemies[i].x-12;
+            }
+        }
+
+    txSetColor(TX_WHITE);
+    DrawText(first);
+    DrawText(second);
+    DrawText(third);
+    DrawText(fourth);
+    DrawText(fifth);
 
     if(GetAsyncKeyState('W'))
     {
@@ -74,6 +117,15 @@ int main()
     if(GetAsyncKeyState('S'))
     {
     protagonist.y=protagonist.y+35;
+    }
+
+    if(GetAsyncKeyState('Q'))
+    {
+        first.visible=false;
+        second.visible=false;
+        third.visible=false;
+        fourth.visible=false;
+        fifth.visible=false;
     }
 
 
@@ -86,40 +138,38 @@ int main()
          }
     }
 
-    if(enemies[3].visible)
-        {
-          for(int i=0; i<enemynumber; i++)
-            {
-                DrawEnemy(enemy);
-            }
-        }
-
     if(bullet[0].visible)
         {
-            for(int i=0; i<rifleburst; i++)
-        {
-            if(bullet[i].visible)
+        for(int i=0; i<rifleburst; i++)
                 {
-              txSetColor(TX_BLACK, 3);
-              txSetFillColor(TX_WHITE);
-              txCircle(bullet[rifleburst-1].x, bullet[rifleburst-1].y, 5);
-              bullet[rifleburst-1].x=bullet[rifleburst-1].x+bullet[rifleburst-1].v+28;
+                if(bullet[i].visible)
+                    {
+                        txSetColor(TX_BLACK, 3);
+                        txSetFillColor(TX_WHITE);
+                        txCircle(bullet[rifleburst-1].x, bullet[rifleburst-1].y, 5);
+                        bullet[rifleburst-1].x=bullet[rifleburst-1].x+bullet[rifleburst-1].v+28;
+                    }
                 }
+        }
+
+    for(int i=0; i<enemynumber; i++)
+        {
+        if(bullet[rifleburst-1].x>enemies[i].x+50 && bullet[rifleburst-1].x<enemies[i].x+260
+        && bullet[rifleburst-1].y>enemies[i].y && bullet[rifleburst-1].y<enemies[i].y+150)
+            {
+                bullet[rifleburst-1].visible=false;
+                enemies[i].visible=false;
             }
         }
 
-    if(bullet[rifleburst-1].x>enemy.x+50 && bullet[rifleburst-1].x<enemy.x+260
-        && bullet[rifleburst-1].y>enemy.y && bullet[rifleburst-1].y<enemy.y+150)
+    for(int i=0; i<enemynumber; i++)
     {
-        bullet[rifleburst-1].visible=false;
-        enemy.visible=false;
-    }
-
-    if(!enemy.visible)
-    {
-       enemy.y = random(150, 700);
-       enemy.x = random(1700, 1850);
-       enemy.visible = true;
+        if(!enemies[i].visible)
+        {
+            enemies[i].y = random(150, 700);
+            enemies[i].x = random(1700, 1850);
+            enemies[i].visible = true;
+        }
     }
 
     if(protagonist.x<=325)
