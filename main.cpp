@@ -57,10 +57,8 @@ int main()
     int enemynumber=3;
     int xbullet;
     int ybullet;
-    bool selectpistol=false;
-    bool selectrifle=true;
-    bool selectsniper=false;
-    bool selectshotgun=false;
+    int level = 1;
+    string page = "Меню";
 
     Character bullet[100];
 
@@ -85,22 +83,61 @@ int main()
         bullet[i] = {protagonist.x+305, protagonist.y+99, 0, false, 10};
     }
 
-    while(!GetAsyncKeyState(VK_ESCAPE))
+    while(true)
     {
     txBegin();
+    txClear();
+
+    if (page == "Меню")
+    {
+        txSelectFont("Impact", 50);
+        txSetFillColor(TX_BLACK);
+        txRectangle(700, 400, 900, 450);
+        Text menutext1 = {675, 150, "Игра приостановлена", true};
+        DrawText(menutext1);
+        txSelectFont("Impact", 30);
+        Text menubutton1 = {755, 410, "Возобновить", true};
+        DrawText(menubutton1);
+        if(txMouseX() >= 700 && txMouseY() >= 400 &&
+        txMouseX() <= 900 && txMouseY() <= 450 &&
+        txMouseButtons() == 1)
+        {
+            page = "Игра";
+        }
+
+        txRectangle(700, 500, 900, 550);
+        Text menubutton2 = {775, 510, "Выход", true};
+        DrawText(menubutton2);
+        if(txMouseX() >= 700 && txMouseY() >= 500 &&
+        txMouseX() <= 900 && txMouseY() <= 550 &&
+        txMouseButtons() == 1)
+        {
+            return 0;
+        }
+
+    }
+
+    if(page=="Игра")
+    {
+        if(GetAsyncKeyState(VK_ESCAPE))
+        {
+            page="Меню";
+        }
+
+
     txBitBlt (txDC(), 0, 0, 1600, 900, background);
 
     enemy.x = enemy.x-12;
 
     DrawProtagonist(protagonist);
 
-       if(enemies[enemynumber].visible)
+    if(enemies[enemynumber].visible)
         {
-          for(int i=0; i<enemynumber; i++)
-            {
-                DrawEnemy(enemies[i]);
-                enemies[i].x = enemies[i].x-12;
-            }
+            for(int i=0; i<enemynumber; i++)
+                {
+                    DrawEnemy(enemies[i]);
+                    enemies[i].x = enemies[i].x-12;
+                }
         }
 
     txSetColor(TX_WHITE);
@@ -174,18 +211,21 @@ int main()
 
     if(protagonist.x<=325)
     {
-    protagonist.x=325;
+        protagonist.x=325;
     }
     if(protagonist.y<=150)
     {
-    protagonist.y=150;
+        protagonist.y=150;
     }
     if(protagonist.y>=700)
     {
-    protagonist.y=700-20;
+        protagonist.y=700-20;
+    }
+     txEnd();
+
     }
     txSleep(25);
-    txEnd();
+
     }
 
     txDeleteDC (background);
