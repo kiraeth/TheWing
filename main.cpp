@@ -77,6 +77,7 @@ int main()
     Text fourth = {25, 100, "Нажмите G, чтобы сменить локацию перестрелки", true};
     Text fifth = {25, 125, "Нажмите Q, чтобы закрыть это окно", true};
     HDC background = txLoadImage ("background.bmp");
+    HDC backmainmenu = txLoadImage ("backmainmenu.bmp");
 
     for(int i=0; i<rifleburst; i++)
     {
@@ -91,6 +92,8 @@ int main()
     if (page == "Меню")
     {
         txSelectFont("Impact", 50);
+        txSetColor(TX_WHITE, 3);
+        txBitBlt(txDC(), 0, 0, 1600, 900, backmainmenu);
         txSetFillColor(TX_BLACK);
         txRectangle(700, 400, 900, 450);
         Text menutext1 = {675, 150, "Игра приостановлена", true};
@@ -207,6 +210,12 @@ int main()
             enemies[i].x = random(1700, 1850);
             enemies[i].visible = true;
         }
+
+        if(enemies[i].x <= enemies[i-1].x-50 && enemies[i].x+50 >= enemies[i-1].x+260 &&
+           enemies[i].y <= enemies[i-1].y && enemies[i].y >= enemies[i-1].y+150)
+           {
+                enemies[i].visible = false;
+           }
     }
 
     if(protagonist.x<=325)
