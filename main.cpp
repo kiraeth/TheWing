@@ -48,10 +48,7 @@ int main()
     int x=325;
     int y=500;
     int rifleburst=3;
-    int snipersingle=1;
-    int shotgunsingle=6;
-    int pistolsingle=1;
-    int xenemy=1700;
+    int xenemy=2500;
     int yenemy=500;
     int venemy=20;
     int enemynumber=3;
@@ -59,23 +56,25 @@ int main()
     int ybullet;
     int level = 1;
     string page = "Меню";
+    char scoremassive[100];
+    int score = 0;
 
     Character bullet[100];
-
     Character protagonist = {x, y, txLoadImage ("ct.bmp"), true, 0};
     Character enemy = {xenemy, yenemy, txLoadImage ("enemy.bmp"), true, 100};
 
     Character enemies[enemynumber];
-    enemies[0] = {1700, 200, enemy.pic, true, 100};
-    enemies[1] = {1650, 450, enemy.pic, true, 100};
-    enemies[2] = {1750, 700, enemy.pic, true, 100};
+    enemies[0] = {3000, 200, enemy.pic, true, 100};
+    enemies[1] = {2900, 450, enemy.pic, true, 100};
+    enemies[2] = {2950, 700, enemy.pic, true, 100};
 
     txSelectFont("Impact", 30);
     Text first = {25, 25, "Как играть:", true};
     Text second = {25, 50, "Нажмите Enter, чтобы стрелять", true};
     Text third = {25, 75, "Нажмите W или S, чтобы ходить вверх или вниз", true};
-    Text fourth = {25, 100, "Нажмите G, чтобы сменить локацию перестрелки", true};
+    Text fourth = {25, 100, "", true};
     Text fifth = {25, 125, "Нажмите Q, чтобы закрыть это окно", true};
+    Text scoretext = {1500, 25, scoremassive, true};
     HDC background = txLoadImage ("background.bmp");
     HDC backmainmenu = txLoadImage ("backmainmenu.bmp");
 
@@ -115,6 +114,24 @@ int main()
         txMouseX() <= 900 && txMouseY() <= 550 &&
         txMouseButtons() == 1)
         {
+
+    if(page=="Конец")
+    {
+    txSelectFont("Impact", 50);
+    txSetColor(TX_WHITE, 3);
+    txBitBlt(txDC(), 0, 0, 1600, 900, backmainmenu);
+    Text gameover = {675, 150, "Вы проиграли", true};
+    DrawText(gameover);
+    txRectangle(700, 500, 900, 550);
+    Text gameoverbutton = {775, 510, "Выйти", true};
+    DrawText(gameoverbutton);
+    if(txMouseX() >= 700 && txMouseY() >= 500 &&
+    txMouseX() <= 900 && txMouseY() <= 550 &&
+    txMouseButtons() == 1)
+    {
+        return 0;
+    }
+    }
             return 0;
         }
 
@@ -130,16 +147,22 @@ int main()
 
     txBitBlt (txDC(), 0, 0, 1600, 900, background);
 
-    enemy.x = enemy.x-12;
+    enemies[0].x = enemies[0].x-12;
+    enemies[1].x = enemies[1].x-10;
+    enemies[2].x = enemies[2].x-14;
 
     DrawProtagonist(protagonist);
+
+    DrawEnemy(enemies[0]);
+    DrawEnemy(enemies[1]);
+    DrawEnemy(enemies[2]);
 
     if(enemies[enemynumber].visible)
         {
             for(int i=0; i<enemynumber; i++)
                 {
                     DrawEnemy(enemies[i]);
-                    enemies[i].x = enemies[i].x-12;
+                    enemies[i].x = enemies[i].x-5;
                 }
         }
 
@@ -149,6 +172,8 @@ int main()
     DrawText(third);
     DrawText(fourth);
     DrawText(fifth);
+    sprintf(scoremassive, "Счёт: %d", score);
+    DrawText(scoretext);
 
     if(GetAsyncKeyState('W'))
     {
@@ -209,13 +234,8 @@ int main()
             enemies[i].y = random(150, 700);
             enemies[i].x = random(1700, 1850);
             enemies[i].visible = true;
+            score = score + 10;
         }
-
-        if(enemies[i].x <= enemies[i-1].x-50 && enemies[i].x+50 >= enemies[i-1].x+260 &&
-           enemies[i].y <= enemies[i-1].y && enemies[i].y >= enemies[i-1].y+150)
-           {
-                enemies[i].visible = false;
-           }
     }
 
     if(protagonist.x<=325)
@@ -230,7 +250,16 @@ int main()
     {
         protagonist.y=700-20;
     }
-     txEnd();
+
+    for(int i=0; i<enemynumber; i++)
+    {
+        if(enemies[i].x<=protagonist.x)
+        {
+           page="Конец";
+        }
+    }
+
+    txEnd();
 
     }
     txSleep(25);
