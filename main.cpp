@@ -58,6 +58,7 @@ int main()
     string page = "Меню";
     char scoremassive[100];
     int score = 0;
+    int tp = 0;
 
     Character bullet[100];
     Character protagonist = {x, y, txLoadImage ("ct.bmp"), true, 0};
@@ -70,13 +71,15 @@ int main()
 
     txSelectFont("Impact", 30);
     Text first = {25, 25, "Как играть:", true};
-    Text second = {25, 50, "Нажмите Enter, чтобы стрелять", true};
-    Text third = {25, 75, "Нажмите W или S, чтобы ходить вверх или вниз", true};
-    Text fourth = {25, 100, "", true};
-    Text fifth = {25, 125, "Нажмите Q, чтобы закрыть это окно", true};
+    Text second = {25, 50, "Ваша задача: не пропустить врагов в здание.", true};
+    Text third = {25, 75, "Нажмите Enter, чтобы стрелять", true};
+    Text fourth = {25, 100, "Нажмите W или S, чтобы ходить вверх или вниз", true};
+    Text fifth = {25, 150, "Нажмите Q, чтобы закрыть это окно", true};
     Text scoretext = {1500, 25, scoremassive, true};
+    Text finalscoretext = {665, 225, scoremassive, true};
     HDC background = txLoadImage ("background.bmp");
     HDC backmainmenu = txLoadImage ("backmainmenu.bmp");
+    HDC gameover = txLoadImage ("gameover.bmp");
 
     for(int i=0; i<rifleburst; i++)
     {
@@ -87,6 +90,28 @@ int main()
     {
     txBegin();
     txClear();
+
+        if(page=="Конец")
+    {
+    txSelectFont("Impact", 50);
+    txSetColor(TX_WHITE, 3);
+    txSetFillColor(TX_BLACK);
+    txBitBlt(txDC(), 0, 0, 1600, 900, gameover);
+    Text gameover = {725, 125, "Вы проиграли", true};
+    DrawText(gameover);
+    sprintf(scoremassive, "Ваш финальный счёт: %d", score);
+    DrawText(finalscoretext);
+    txRectangle(700, 500, 900, 550);
+    txSelectFont("Impact", 30);
+    Text gameoverbutton = {775, 510, "Выйти", true};
+    DrawText(gameoverbutton);
+    if(txMouseX() >= 700 && txMouseY() >= 500 &&
+    txMouseX() <= 900 && txMouseY() <= 550 &&
+    txMouseButtons() == 1)
+    {
+        return 0;
+    }
+    }
 
     if (page == "Меню")
     {
@@ -114,24 +139,6 @@ int main()
         txMouseX() <= 900 && txMouseY() <= 550 &&
         txMouseButtons() == 1)
         {
-
-    if(page=="Конец")
-    {
-    txSelectFont("Impact", 50);
-    txSetColor(TX_WHITE, 3);
-    txBitBlt(txDC(), 0, 0, 1600, 900, backmainmenu);
-    Text gameover = {675, 150, "Вы проиграли", true};
-    DrawText(gameover);
-    txRectangle(700, 500, 900, 550);
-    Text gameoverbutton = {775, 510, "Выйти", true};
-    DrawText(gameoverbutton);
-    if(txMouseX() >= 700 && txMouseY() >= 500 &&
-    txMouseX() <= 900 && txMouseY() <= 550 &&
-    txMouseButtons() == 1)
-    {
-        return 0;
-    }
-    }
             return 0;
         }
 
@@ -223,6 +230,11 @@ int main()
         && bullet[rifleburst-1].y>enemies[i].y && bullet[rifleburst-1].y<enemies[i].y+150)
             {
                 bullet[rifleburst-1].visible=false;
+                    /*
+                    enemies[i].visible=false;
+                    txSleep(1000);
+                    enemies[i].visible=true;
+                    txSleep(1000);  */
                 enemies[i].visible=false;
             }
         }
