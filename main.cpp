@@ -55,7 +55,7 @@ int main()
     int xbullet;
     int ybullet;
     int level = 1;
-    string page = "Меню";
+    string page = "Главное меню";
     char scoremassive[100];
     int score = 0;
     int tp = 0;
@@ -91,7 +91,7 @@ int main()
     txBegin();
     txClear();
 
-        if(page=="Конец")
+    if(page=="Конец")
     {
     txSelectFont("Impact", 50);
     txSetColor(TX_WHITE, 3);
@@ -113,7 +113,7 @@ int main()
     }
     }
 
-    if (page == "Меню")
+    if(page=="Меню")
     {
         txSelectFont("Impact", 50);
         txSetColor(TX_WHITE, 3);
@@ -141,7 +141,36 @@ int main()
         {
             return 0;
         }
+    }
 
+        if(page=="Главное меню")
+    {
+        txSelectFont("Impact", 80);
+        txSetColor(TX_WHITE, 3);
+        txBitBlt(txDC(), 0, 0, 1600, 900, backmainmenu);
+        txSetFillColor(TX_BLACK);
+        txRectangle(700, 400, 900, 450);
+        Text menutext1 = {735, 150, "Крыло", true};
+        DrawText(menutext1);
+        txSelectFont("Impact", 30);
+        Text menubutton1 = {755, 410, "Начать игру", true};
+        DrawText(menubutton1);
+        if(txMouseX() >= 700 && txMouseY() >= 400 &&
+        txMouseX() <= 900 && txMouseY() <= 450 &&
+        txMouseButtons() == 1)
+        {
+            page = "Игра";
+        }
+
+        txRectangle(700, 500, 900, 550);
+        Text menubutton2 = {775, 510, "Выход", true};
+        DrawText(menubutton2);
+        if(txMouseX() >= 700 && txMouseY() >= 500 &&
+        txMouseX() <= 900 && txMouseY() <= 550 &&
+        txMouseButtons() == 1)
+        {
+            return 0;
+        }
     }
 
     if(page=="Игра")
@@ -275,7 +304,6 @@ int main()
 
     }
     txSleep(25);
-
     }
 
     txDeleteDC (background);
